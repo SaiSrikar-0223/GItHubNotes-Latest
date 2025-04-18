@@ -55,7 +55,7 @@ Project team members use the repo URL to connect.
 2. Staging Area
 3. Local Repository
 4. Central Repository (Remote)
-
+![Project Screenshot](git-architecture.gif)
 ---
 
 ## Git Bash Commands
