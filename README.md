@@ -7,7 +7,7 @@
 ### Day-04 : https://youtu.be/ee5sNe6G6SQ
 ---
 
-## Git vs GitHub
+## Git & GitHub Class Notes
 
 - **Git** is a version control software.
 - **GitHub** is a platform used to store all developers' project source code in one place.
