@@ -135,3 +135,106 @@ When multiple teams work on the same repo, use branches to avoid delivery issues
    ```
 4. Create a file and push it to `develop` branch.
 5. Create a Pull Request and merge `develop` into `main`.
+
+
+# Git Interview Concepts
+
+---
+
+## ✅ What is a Pull Request?
+
+A **Pull Request** is used to merge changes from one branch into another.
+
+**Example:**  
+Merging changes from the `develop` branch to the `main` branch.
+
+---
+
+## ✅ What is Git Stash?
+
+**Git Stash** is used to save the current changes in a backup (stash) and make the working directory clean.
+
+### Example Scenario:
+
+- `JIRA-101` assigned at 9 AM → Work started, partial changes done.
+- At 11 AM, `JIRA-102` assigned → It's critical.
+- To work on `JIRA-102`, stash the `JIRA-101` changes:
+  
+  ```bash
+  git stash
+  ```
+
+- After pushing `JIRA-102` changes, get `JIRA-101` changes back to working tree :
+  
+  ```bash
+  git stash apply
+  ```
+
+---
+
+## ✅ How to Remove Git Local Commits?
+
+Use the `git reset` command to undo local commits.
+
+### Types of Reset:
+
+- **Soft Reset**: Removes commit but retains changes in the staging area.
+  
+  ```bash
+  git reset --soft HEAD~1
+  ```
+
+- **Hard Reset**: Removes both commit and file changes.
+  
+  ```bash
+  git reset --hard HEAD~1
+  ```
+
+---
+
+## ✅ How to Revert Central Repo Commits?
+
+Use the `git revert` command to undo changes from the remote repository.
+
+```bash
+git revert <commit-id>
+git push
+```
+
+---
+
+## ✅ What is Git Cherry-pick?
+
+- By default, `git merge` merges all commits from one branch to another.
+- If you want to merge only a **specific commit**, use `git cherry-pick`.
+
+```bash
+git cherry-pick <commit-id>
+```
+
+---
+
+## ✅ Git Pull vs Git Fetch
+
+| Command     | Description                                                |
+|-------------|------------------------------------------------------------|
+| `git pull`  | Downloads changes from the remote repo and merges into working directory |
+| `git fetch` | Downloads changes to the local repo only                   |
+
+To merge after `fetch`, run:
+
+```bash
+git merge
+```
+
+> `git pull` = `git fetch` + `git merge`
+
+---
+
+## ✅ What is Git Fork?
+
+**Git Fork** is used to copy someone else's GitHub repository into your own GitHub account.
+
+- Useful for contributing to open-source projects.
+
+---
